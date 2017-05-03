@@ -1,0 +1,22 @@
+NAME="libfilezilla"
+VERSION=0.9.1
+RELEASE=1
+CATEGORY="Libs"
+SUMMARY="FileZilla I/O library"
+DESCRIPTION="libfilezilla is a small and modern C++ library, offering some
+basic functionality to build high-performing, platform-independent programs."
+HOMEPAGE="http://lib.filezilla-project.org/"
+SRC_URI="http://download.filezilla-project.org/libfilezilla/libfilezilla-${VERSION}.tar.bz2"
+PATCH_URI="0.6.1-cygwin-unix.patch"
+
+PKG_NAMES="libfilezilla0 libfilezilla-devel"
+libfilezilla0_CONTENTS="
+	usr/bin/cygfilezilla-0.dll
+	usr/share/doc/
+"
+libfilezilla_devel_CONTENTS="
+	usr/include/libfilezilla/
+	usr/lib/libfilezilla.dll.a
+	usr/lib/pkgconfig/libfilezilla.pc
+"
+DIFF_EXCLUDES="config.hpp.in"
